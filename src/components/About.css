@@ -1,0 +1,27 @@
+.aapp {
+    background: radial-gradient(rgba(255, 255, 255, 0.258) 0%, #42566c 350%), url('V:\sem4\Web Prog\MiniProject\miniproject\github\weatherapp\reactjs-weatherapp-main\public\about.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.atop {
+    position:relative;
+    border-radius:15px;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    padding:10vh;
+    width:1000px;
+    height:auto;
+    margin: 10vh;
+    color:rgba(0, 0, 0, 0.6);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    background-color:rgba(255, 255, 255, 0.5);
+    z-index:2;
+  }
