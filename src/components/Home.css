@@ -59,7 +59,7 @@ h2 {
     width: 100%;
     height: 100vh;
     background: radial-gradient(rgba(255, 255, 255, 0.258) 0%, #42566c 350%),
-        url('./teamt.jpg') no-repeat center center/cover;
+        url('https://images.unsplash.com/photo-1542708993627-b6e5bbae43c4?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;

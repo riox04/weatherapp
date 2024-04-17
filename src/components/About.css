@@ -1,6 +1,6 @@
 .aapp {
     background: radial-gradient(rgba(255, 255, 255, 0.258) 0%, #42566c 350%), 
-    url('./about.jpg') no-repeat center center/cover;
+    url('https://images.unsplash.com/photo-1613266654520-c56e7f9e6e9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     display: flex;
