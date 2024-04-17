@@ -1,6 +1,6 @@
 .aapp {
     background: radial-gradient(rgba(255, 255, 255, 0.258) 0%, #42566c 350%), 
-    url('V:\sem4\Web Prog\MiniProject\miniproject\github\weatherapp\public\about.jpg') no-repeat center center/cover;
+    url('./about.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     display: flex;

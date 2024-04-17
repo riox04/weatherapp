@@ -59,7 +59,7 @@ h2 {
     width: 100%;
     height: 100vh;
     background: radial-gradient(rgba(255, 255, 255, 0.258) 0%, #42566c 350%),
-        url('V:\sem4\Web Prog\MiniProject\miniproject\github\weatherapp\public\teamt.jpg') no-repeat center center/cover;
+        url('./teamt.jpg') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
