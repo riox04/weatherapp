@@ -117,15 +117,6 @@ input {
     z-index: 2;
 }
 
-.timebox {
-    display: flex;
-    flex-direction: center;
-    text-align: center;
-    padding: 1em 0.5em;
-    gap: 1em;
-    margin: 1rem auto;
-}
-
 .bottom {
     height: 15vh;
     width: 100%;
