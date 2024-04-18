@@ -12,11 +12,23 @@
 
 .nav-item {
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
 }
 
 .nav-link {
     text-decoration: none;
 }
 
+.nav-link:hover {
+    color: #ffdeca;
+}
 
+.Anav-link {
+    text-decoration: none;
+    padding: 55px 5px;
+    color: #ff9900;
+}
+
+.Anav-link:hover {
+    color: #ffdeca;
+}

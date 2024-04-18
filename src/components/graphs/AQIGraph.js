@@ -1,6 +1,13 @@
 import React from 'react';
 import './graphs.css'
+import { BsWind, BsCloudRain, BsCloudDrizzle, BsCloudSnow, BsCloudFog2, BsCloudSun } from 'react-icons/bs';
+import { FiDroplet, FiSun, } from 'react-icons/fi';
+import { TbTemperature, TbCloudStorm, TbMist, TbTornado } from 'react-icons/tb';
+import { TfiHandPointRight } from "react-icons/tfi";
 import { Line } from 'react-chartjs-2';
+import { NavLink } from 'react-router-dom';
+import { FaRegHandPointDown } from "react-icons/fa6";
+
 import {
   Chart as Chartjs,
   CategoryScale,
@@ -26,9 +33,7 @@ Chartjs.register(
 
 const AQIGraph = () => {
   const labels = Array.from({ length: 52 }, (_, i) => `${i + 1}`);
-  const aqi_values = [
-    45, 42, 47, 40, 38, 36, 35, 34, 41, 44, 48, 50, 53, 55, 57, 60, 62, 58, 59, 61, 63, 65, 67, 68, 65, 64, 62, 60, 58, 56, 54, 52, 50, 52, 50, 48, 46, 44, 42, 40, 38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16,
-  ];
+  const aqi_values = Array.from({ length: 52 }, () => Math.floor(Math.random() * 20) + 20);
 
   const data = {
     labels,
@@ -40,6 +45,8 @@ const AQIGraph = () => {
         backgroundColor: 'rgba(75, 192, 192, 0.3)',
         tension: 0.4,
         fill: true,
+        color: 'white',
+
       },
     ],
   };
@@ -50,6 +57,12 @@ const AQIGraph = () => {
       title: {
         display: true,
         text: 'Air Quality Index Trends for the Past Year',
+        color: 'white',
+      },
+      legend: {
+        labels: {
+          color: 'white', // Change legend label color to white
+        },
       },
     },
     scales: {
@@ -57,12 +70,26 @@ const AQIGraph = () => {
         title: {
           display: true,
           text: 'Week',
+          color: 'white',
+        },
+        ticks: {
+          color: 'white',
+        },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.1)', 
         },
       },
       y: {
         title: {
           display: true,
           text: 'Air Quality Index',
+          color: 'white',
+        },
+        ticks: {
+          color: 'white',
+        },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.1)', 
         },
         min: 0,
         max: 100,
@@ -73,7 +100,30 @@ const AQIGraph = () => {
   return (
     <>
       <div className="aqi-graph-container">
-      <Line options={options} data={data} />
+        <Line options={options} data={data} />
+      </div>
+      <h4>Scroll Down<FaRegHandPointDown size={28}/></h4>
+      <div className="bottom">
+        <div className="innerbot" style={{ color: '#42566c' }}>
+          <div className="wind">
+            <p className="small">Click here <TfiHandPointRight size={20} /></p>
+          </div>
+          <div className="feelslike">
+            <NavLink to="/temp-graph" className="nav-link">
+              <p className="small"><TbTemperature />Temperature</p>
+            </NavLink>
+          </div>
+          <div className="humidity">
+            <NavLink to="/humidity-graph" className="nav-link">
+              <p className="small"><FiDroplet />Humidity</p>
+            </NavLink>
+          </div>
+          <div className="aqi">
+            <NavLink to="/aqi-graph" className="nav-link">
+              <p className="small"><BsWind />AQI</p>
+            </NavLink>
+          </div>
+        </div>
       </div>
     </>
   );

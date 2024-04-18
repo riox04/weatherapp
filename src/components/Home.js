@@ -2,16 +2,13 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import CountUp from 'react-countup';
 import ColorContrastChecker from 'color-contrast-checker';
-import { NavLink }  from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import 'moment-timezone';
 import './Home.css';
 import { BsWind, BsCloudRain, BsCloudDrizzle, BsCloudSnow, BsCloudFog2, BsCloudSun } from 'react-icons/bs';
 import { FiDroplet, FiSun, } from 'react-icons/fi';
 import { TbTemperature, TbCloudStorm, TbMist, TbTornado } from 'react-icons/tb';
-import HumidityGraph from './graphs/HumidityGraph.js';
-import TempGraph from './graphs/TempGraph.js';
-import AQIGraph from './graphs/AQIGraph.js';
-
+import { TfiHandPointRight } from "react-icons/tfi";
 
 function Home() {
 
@@ -153,6 +150,9 @@ function Home() {
           </div> : null}
         {data.main ? <div className="bottom">
           <div className="innerbot" style={{ color: maincolor }}>
+            <div className="wind">
+              {data.main ? <p className="small">Click here <TfiHandPointRight size={20}/></p> : null}
+            </div>
             <div className="feelslike">
               <NavLink to="/temp-graph" className="nav-link">
                 {data.main ? (<p className="bold"><CountUp end={data.main.feels_like.toFixed()} />°C</p>) : null}
