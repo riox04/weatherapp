@@ -1,0 +1,12 @@
+.aqi-graph-container {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh auto;
+  }
+  
+body {
+    background: url('https://wallpapercave.com/wp/wp3990894.jpg');
+}

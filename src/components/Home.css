@@ -27,8 +27,6 @@ h2 {
 
 .about-icon {
     position: fixed;
-    top: 20px;
-    right: 20px;
     cursor: pointer;
     z-index: 9999;
 }
@@ -75,11 +73,11 @@ input {
     backdrop-filter: blur(3px);
     background-color: rgba(255, 255, 255, 0.75);
     padding: 0.75em 1.5em;
-    width: 900px;
+    width: 80%;
+    max-width: 900px;
     text-align: left;
     position: relative;
-    /* margin-top:2em; */
-    margin: 2.2em auto;
+    margin: 2.2em 10vh;
 }
 
 ::placeholder {
@@ -149,6 +147,19 @@ input {
     max-width: 500px;
 }
 
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #ff9900;
+}
+
 .bold {
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1),
@@ -188,6 +199,13 @@ input {
     h2 {
         font-size: 1.5rem;
         line-height: 1.5rem;
+    }
+
+    .about-icon {
+        position: absolute;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
     }
 
     .innerbot {

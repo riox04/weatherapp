@@ -2,11 +2,16 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import CountUp from 'react-countup';
 import ColorContrastChecker from 'color-contrast-checker';
+import { NavLink }  from 'react-router-dom';
 import 'moment-timezone';
 import './Home.css';
 import { BsWind, BsCloudRain, BsCloudDrizzle, BsCloudSnow, BsCloudFog2, BsCloudSun } from 'react-icons/bs';
 import { FiDroplet, FiSun, } from 'react-icons/fi';
 import { TbTemperature, TbCloudStorm, TbMist, TbTornado } from 'react-icons/tb';
+import HumidityGraph from './graphs/HumidityGraph.js';
+import TempGraph from './graphs/TempGraph.js';
+import AQIGraph from './graphs/AQIGraph.js';
+
 
 function Home() {
 
@@ -35,36 +40,36 @@ function Home() {
             lon = response.data.coord.lon;
           }
         }).then(() => {
-        axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${WT_KEY}`)
-        .then((aqiresponse) => {
-          if (aqiresponse !== undefined) {
-            const aqiValue = aqiresponse.data.list[0].main.aqi;
-            let aqiType = "";
-            switch (aqiValue) {
-              case 1:
-                aqiType = "Good";
-                break;
-              case 2:
-                aqiType = "Fair";
-                break;
-              case 3:
-                aqiType = "Moderate";
-                break;
-              case 4:
-                aqiType = "Poor";
-                break;
-              case 5:
-                aqiType = "Very Poor";
-                break;
-              default:
-                aqiType = "Unknown";
-                break;
-            }            
-            setAqiData(aqiValue);
-            setAqType(aqiType);
-          }
-        })
-        
+          axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${WT_KEY}`)
+            .then((aqiresponse) => {
+              if (aqiresponse !== undefined) {
+                const aqiValue = aqiresponse.data.list[0].main.aqi;
+                let aqiType = "";
+                switch (aqiValue) {
+                  case 1:
+                    aqiType = "Good";
+                    break;
+                  case 2:
+                    aqiType = "Fair";
+                    break;
+                  case 3:
+                    aqiType = "Moderate";
+                    break;
+                  case 4:
+                    aqiType = "Poor";
+                    break;
+                  case 5:
+                    aqiType = "Very Poor";
+                    break;
+                  default:
+                    aqiType = "Unknown";
+                    break;
+                }
+                setAqiData(aqiValue);
+                setAqType(aqiType);
+              }
+            })
+
         })
 
       // const aqiresponse = { // this is api ninjas
@@ -78,7 +83,7 @@ function Home() {
 
 
       axios.get(`https://api.unsplash.com/search/photos?page=1&query=${location}&client_id=${PIC_KEY}`)
-      .then((background) => {
+        .then((background) => {
           setImgUrl(background.data.results[5].urls.regular)
           setMaincolor(background.data.results[5].color)
         })
@@ -149,22 +154,26 @@ function Home() {
         {data.main ? <div className="bottom">
           <div className="innerbot" style={{ color: maincolor }}>
             <div className="feelslike">
-              {data.main ? <p className="bold"><CountUp end={data.main.feels_like.toFixed()} />°C</p> : null}
-              {data.main ? <p className="small"><TbTemperature />Feels like</p> : null}
+              <NavLink to="/temp-graph" className="nav-link">
+                {data.main ? (<p className="bold"><CountUp end={data.main.feels_like.toFixed()} />°C</p>) : null}
+                {data.main ? <p className="small"><TbTemperature />Feels like</p> : null}
+              </NavLink>
             </div>
             <div className="humidity">
-              {data.main ? <p className="bold">
-                <CountUp
-                  end={data.main.humidity} />%</p> : null}
-              {data.main ? <p className="small"><FiDroplet />Humidity</p> : null}
+              <NavLink to="/humidity-graph" className="nav-link">
+                {data.main ? (<p className="bold"><CountUp end={data.main.humidity} />%</p>) : null}
+                {data.main ? <p className="small"><FiDroplet />Humidity</p> : null}
+              </NavLink>
             </div>
             <div className="wind">
               {data.wind ? <p className="bold"><CountUp end={data.wind.speed} /> m/s</p> : null}
               {data.main ? <p className="small"><BsWind />Wind</p> : null}
             </div>
             <div className="aqi">
-              {data.wind ? <p className="bold"><CountUp end={aqiData} /> </p> : null}
-              {data.main ? <p className="small"><BsWind />AQI</p> : null}
+              <NavLink to="/aqi-graph" className="nav-link">
+                {data.wind ? <p className="bold"><CountUp end={aqiData} /> </p> : null}
+                {data.main ? <p className="small"><BsWind />AQI</p> : null}
+              </NavLink>
             </div>
             <div>
               {data.wind ? <p className="bold">{aqType}</p> : null}
