@@ -12,7 +12,7 @@ function Navbar() {
             <ul className="navbar-nav">
                 <li className="nav-item">
                     {location.pathname === '/' ? (
-                        <NavLink to="/about" className="Anav-link">
+                        <NavLink to="/about" className="nav-link">
                             {/* <img
                                 src="https://www.freeiconspng.com/uploads/about-us-icon-3.png"
                                 alt="AboutUsIcon"
@@ -29,7 +29,6 @@ function Navbar() {
                                 style={{ height: '50px', width: '50px',}}
                             /> */}
                             <TiHome size={50} />
-
                         </NavLink>
                     )}
                 </li>

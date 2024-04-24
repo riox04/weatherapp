@@ -1,6 +1,5 @@
 .navbar {
     position: fixed;
-    top: 0;
     right: 0;
     z-index: 10000000;
 }
@@ -12,7 +11,8 @@
 
 .nav-item {
     justify-content: center;
-    padding: 15px;
+    padding: 35px 20px;
+    color: white;
 }
 
 .nav-link {
@@ -20,15 +20,5 @@
 }
 
 .nav-link:hover {
-    color: #ffdeca;
-}
-
-.Anav-link {
-    text-decoration: none;
-    padding: 55px 5px;
-    color: #ff9900;
-}
-
-.Anav-link:hover {
     color: #ffdeca;
 }
