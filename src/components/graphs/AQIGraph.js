@@ -41,8 +41,8 @@ const AQIGraph = () => {
       {
         label: 'Air Quality Index',
         data: aqi_values,
-        borderColor: 'rgb(75, 192, 192)',
-        backgroundColor: 'rgba(75, 192, 192, 0.3)',
+        borderColor: 'rgb(255, 165, 0)',
+        backgroundColor: 'rgb(255, 165, 0,0.3)',
         tension: 0.4,
         fill: true,
         color: 'white',
@@ -99,7 +99,7 @@ const AQIGraph = () => {
 
   return (
     <>
-      <div className="aqi-graph-container">
+      <div className="all-graph-container">
         <Line options={options} data={data} />
       </div>
       <h4>Scroll Down<FaRegHandPointDown size={28}/></h4>

@@ -111,7 +111,7 @@ const TempGraph = () => {
 
   return (
     <>
-      <div className="aqi-graph-container">
+      <div className="all-graph-container">
         <Line options={options} data={data} />
       </div>
       <h4>Scroll Down<FaRegHandPointDown size={28}/></h4>

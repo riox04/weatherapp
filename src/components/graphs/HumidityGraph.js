@@ -38,7 +38,7 @@ const HumidityGraph = () => {
     labels,
     datasets: [
       {
-        label: 'Air Quality Index',
+        label: 'Humidity Percentage',
         data: humidityValues,
         borderColor: 'rgb(75, 192, 192)',
         backgroundColor: 'rgba(75, 192, 192, 0.3)',
@@ -55,7 +55,7 @@ const HumidityGraph = () => {
     plugins: {
       title: {
         display: true,
-        text: 'Air Quality Index Trends for the Past Year',
+        text: 'Humidity Trends for the Past Year',
         color: 'white',
       },
       legend: {
@@ -81,7 +81,7 @@ const HumidityGraph = () => {
       y: {
         title: {
           display: true,
-          text: 'Air Quality Index',
+          text: 'Humidity Percentage',
           color: 'white',
         },
         ticks: {
@@ -98,7 +98,7 @@ const HumidityGraph = () => {
 
   return (
     <>
-      <div className="humidity-graph-container">
+      <div className="all-graph-container">
         <Line options={options} data={data} />
       </div>
       <h4>Scroll Down <FaRegHandPointDown size={28} /></h4>
