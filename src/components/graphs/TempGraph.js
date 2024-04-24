@@ -1,8 +1,8 @@
 import React from 'react';
 import './graphs.css'
-import { BsWind, BsCloudRain, BsCloudDrizzle, BsCloudSnow, BsCloudFog2, BsCloudSun } from 'react-icons/bs';
-import { FiDroplet, FiSun, } from 'react-icons/fi';
-import { TbTemperature, TbCloudStorm, TbMist, TbTornado } from 'react-icons/tb';
+import { BsWind } from 'react-icons/bs';
+import { FiDroplet } from 'react-icons/fi';
+import { TbTemperature } from 'react-icons/tb';
 import { TfiHandPointRight } from "react-icons/tfi";
 import { Line } from 'react-chartjs-2';
 import { NavLink } from 'react-router-dom';
@@ -114,7 +114,7 @@ const TempGraph = () => {
       <div className="all-graph-container">
         <Line options={options} data={data} />
       </div>
-      <h4>Scroll Down<FaRegHandPointDown size={28}/></h4>
+      <h4>Scroll Down<FaRegHandPointDown size={28} /></h4>
       <div className="bottom">
         <div className="innerbot" style={{ color: '#42566c' }}>
           <div className="wind">

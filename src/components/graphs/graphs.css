@@ -1,12 +1,12 @@
 .all-graph-container {
-    height: 80%;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4vh auto;
-  }
-  
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4vh auto;
+}
+
 body {
-    background: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63468.jpg?t=st=1713961675~exp=1713962275~hmac=63328cd4c6f37abc19d716cbf662be1fc8e895ff726470496161bd4f8a9838f9') no-repeat center center/cover;
+  background: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63468.jpg?t=st=1713961675~exp=1713962275~hmac=63328cd4c6f37abc19d716cbf662be1fc8e895ff726470496161bd4f8a9838f9') no-repeat center center/cover;
 }

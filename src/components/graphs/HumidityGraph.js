@@ -75,7 +75,7 @@ const HumidityGraph = () => {
           color: 'white',
         },
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)', 
+          color: 'rgba(255, 255, 255, 0.1)',
         },
       },
       y: {
@@ -88,7 +88,7 @@ const HumidityGraph = () => {
           color: 'white',
         },
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)', 
+          color: 'rgba(255, 255, 255, 0.1)',
         },
         min: 0,
         max: 100,
